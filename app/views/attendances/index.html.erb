@@ -1,0 +1,26 @@
+
+<div class="card">
+  <div class="card-header">
+    <h1>Attendance System</h1>
+  </div>
+  <div class="card-body">
+    <table class="table table-hover table-bordered table-striped">
+      <thead class="table-dark">
+      <tr>
+        <th>Date</th>
+        <th>Status</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @attendances.each do |attendance| %>
+        <tr>
+          <td><%= attendance.date.strftime("%Y-%m-%d") %></td>
+          <td><%= attendance.status %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+
+    <%= link_to 'Mark Attendance', new_attendance_path, class: 'btn btn-primary' %>
+  </div>
+</div>
